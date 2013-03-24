@@ -8,9 +8,9 @@ object Page {
   val md = """(.*\.(md|markdown))"""r
   val html = """(.*\.(html|htm))"""r
   def apply(name: String) = name match {
-    case txt(file)  => PlainText(file)
-    case md(file)   => Markdown(file)
-    case HTML(file) => HTML(file)
+    case txt(file)  => new PlainText(file)
+    case md(file)   => new Markdown(file)
+    case html(file) => new HTML(file)
   }
 }
 
